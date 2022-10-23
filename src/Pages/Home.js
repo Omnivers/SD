@@ -10,13 +10,17 @@ function Home(){
                     <span className="ocialdev">ocial</span>
                     <span className="Dev">D</span>
                     <span className="ocialdev">ev</span></h1>
-                    <h2 className="presentation">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quasi aut, neque vitae quidem perspiciatis libero maiores ipsam, autem corporis similique cumque? Sit suscipit eveniet ipsam dolore similique maiores placeat?
+                    <h2 className="presentation"
+                    data-aos="zoom-in-down">
+                        Chez SocialDev vous pouvez promouvoir le réseau que vous voulez et avoir un maximum d'abonnées.
+                        SocialDev vous accompagne dans la création et la mise en place d'outils digitaux en créant votre application web et web mobile.
                     </h2>
+                    <h2 className="presentation">Vous avez créé une page Instagram, Youtube, TikTok mais vous ne possèdez pas assez d'abonnées ?</h2>
+                    <h2 className="presentation">Vous souhaitez créé votre propre site internet mais vous n'avez aucune notion du code?</h2>
            </div>
-           <span className="scroll">
-           <i class="fa-solid fa-angle-down arrow"></i>
-           </span>
+                    <span className="scroll">
+                    <i class="fa-solid fa-angle-down arrow"></i>
+                    </span>
             <About />
         </main>
     )
