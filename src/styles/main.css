@@ -1,37 +1,91 @@
+/* Scrollbar style */
+::-webkit-scrollbar {
+    width: 0.6em;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: black;
+    border-radius: 10px;
+    margin-block: .1 em;
+  }
+  ::-webkit-scrollbar-thumb {
+    background:white;
+    border-radius: 10px;
+  }
+/*  */
 Nav{
     background-color: rgb(30,0,29,0.3);
     color:white;
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: 11;
 }
-body{
-    background-color: rgb(95,0,93);
+.nav-link{
+    text-decoration: none;
+    color: white;
 }
 .logo{
-    font-size: 40px;
-    margin: 10px;
+    margin: 15px;
 }
 .menu{
     list-style: none;
-    font-size: 25px;
+    font-size: 20px;
     display: flex;
 }
 .menu li{
-    margin: 20px;
+    margin: 30px 30px 10px 30px;
+    cursor: pointer;
+}
+.burger{
+    margin: 30px;
+    display: none;
     cursor: pointer;
 }
 .head{
+    background: rgb(33,0,32);
+    background: linear-gradient(180deg, rgba(33,0,32,1) 0%, rgba(95,0,93,1) 25%, rgba(95,0,93,1) 50%);
     color: white;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
+
+/* Title effect from line 30 to 60 */
 .title{
     font-size: 70px;
-    margin: 50px;
+    margin: 150px 0 50px;
 }
+.ocialdev{
+    animation: socialdev 3s;
+}
+.Social{
+    position: relative;
+    left: 0px;
+    animation: Social 3s;
+}
+.Dev{
+    position: relative;
+    right: 0px;
+    animation: Dev 3s;
+}
+@keyframes Social{
+    0%{left: 100px;}
+}
+@keyframes Dev {
+    0%{right: 50px;}
+}
+@keyframes socialdev{
+    0%{visibility: hidden;}
+    25%{visibility: hidden;color: rgba(255, 255, 255, 0.219);}
+    50%{visibility: visible;color: rgba(255, 255, 255, 0.329);}
+    75%{visibility: visible;color: rgba(255, 255, 255, 0.514);}
+    100%{visibility: visible;color: white;}
+}
+/*  */
 .presentation{
+    margin-bottom:60px;
     color: rgba(255, 255, 255, 0.651);
     font-size: 30px; 
     max-width: 50%;
@@ -40,15 +94,91 @@ body{
 .scroll{
     display: flex;
     justify-content: center;
-    margin: 100px;
-    background: url("../Wave.png");
-    background-repeat: no-repeat;
+    height: 350px;
+    background-image: url("./Wave.png");
+    background-position: cover;
 }
+.arrow{
+    color:rgba(255, 255, 255, 0.2);
+    font-size: 60px;
+    text-shadow: 0px 10px rgba(255, 255, 255, 0.8);
+    position: relative;
+    animation: arrow 1s infinite;
+}
+@keyframes arrow {
+    from {bottom: 0px;}
+    to {bottom: 20px;}
+}
+.about-us{
+    height: 800px;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+}
+.first{
+    margin-left: 80px;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+}
+.f-1,.f-2{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 35px;
+    color: rgba(0, 0, 0, 0.705);
+    height: 200px;
+    max-width: 75%;
+}
+.f-3,.f-4{
+    font-size: 35px;
+    color: rgba(0, 0, 0, 0.705);
+    max-width: 25%;
+    position: relative;
+    bottom: 500px;
+    height: 200px;
+    left: 70%;
+}
+.f-4{
+    height: 0px;
+}
+.tel{
+    width: 400px;
+    background-image: url('./giphy.gif');
+    background-position:50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.second{
+    background-color: blueviolet;
+}
+
 @media screen and (max-width: 768px) {
-    .menu li{
+    .menu{
         display: none;
+    }
+    .show{
+        margin: 0;
+        padding: 0;
+        flex-direction: column;
+        position: fixed;
+        text-align: center;
+        backdrop-filter: blur(7px);
+        z-index: 11;
+        top: 80px;
+        right: 0px;
+        left: 0px;
+        height: 100%;
+    }
+    .show li{
+        background-color: rgb(95,0,93);
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+        padding: 30px;
+        margin: 5px;
     }
     .title{
         font-size: 50px;
+    }
+    .burger{
+        display: block;
     }
   }
